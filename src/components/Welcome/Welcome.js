@@ -28,7 +28,7 @@ const Welcome = () => {
         </Carousel>
       </CarouselContainer>
       <AuthButtonLayout>
-        <Button primary={"primary"} as={Link} to="/legal">
+        <Button primary={"primary"} as={Link} to="/register">
           Create new wallet
         </Button>
         <Button as={Link} to="/login">

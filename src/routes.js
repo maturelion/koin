@@ -11,6 +11,7 @@ import NotFound from "./components/NotFound/NotFound";
 import CreateRecoveryPhrase from "./components/CreateRecoveryPhrase/CreateRecoveryPhrase";
 import CreateRecoveryPhraseManualBackup from "./components/CreateRecoveryPhrase/CreateRecoveryPhraseManualBackup";
 import LoginRecoveryPhrase from "./components/LoginRecoveryPhrase/LoginRecoveryPhrase";
+import Register from "./components/Register/Register";
 
 const BaseRouter = () => {
   return (
@@ -26,6 +27,7 @@ const BaseRouter = () => {
           element={<CreateRecoveryPhraseManualBackup />}
         />
         <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
         <Route path="login-recovery-phrase" element={<LoginRecoveryPhrase />} />
       </Route>
       <Route path="/dashboard" element={<DashboardLayout />}>
