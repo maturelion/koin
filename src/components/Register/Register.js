@@ -32,6 +32,7 @@ const Register = () => {
   }
 
   const onSubmit = (values) => {
+    console.log(values)
     dispatch(registerUser(values)).unwrap().then(res => navigate("/login"))
   }
 
@@ -44,7 +45,6 @@ const Register = () => {
     password2: Yup.string()
       .required("Repeat Password is Required")
       .oneOf([Yup.ref("password1"), null], "Password Must Match"),
-    referral: Yup.string().min(6).max(6).required("Referral code is required"),
   })
   const formik = useFormik({
     initialValues,
@@ -130,11 +130,11 @@ const Register = () => {
             {formik.errors.password2 ? <FormError>{formik.errors.password2}</FormError> : null}
           </RegisterFormWrapper>
           <RegisterButton
-          type="submit"
-          primary={"primary"}
-        >
-          Login
-        </RegisterButton>
+            type="submit"
+            primary={"primary"}
+          >
+            Register
+          </RegisterButton>
         </RegisterForm>
       </RegisterTextContainer>
     </RegisterContainer>
