@@ -5,7 +5,7 @@ export const CoinsContainer = styled.div``;
 export const CoinsBalanceText = styled.div`
   position: absolute;
   display: flex;
-  width: -webkit-fill-available;
+  /* width: 100%; */
   margin-inline: 15px 30px;
   align-items: center;
   height: 50px;
@@ -17,6 +17,10 @@ export const CoinsBalanceText = styled.div`
   line-height: 12px;
 
   color: #aaaaaa;
+
+  @media only screen and (min-width: 769px) {
+    max-width: 769px;
+  }
 `;
 
 export const StyleCoins = styled.div`

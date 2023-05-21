@@ -13,15 +13,11 @@ import {
   DashboardMainList,
   DashboardMainCoins,
   DashboardMainNFTs,
-  DashboardNav,
-  DashboardNavIcon,
 } from "./Dashboard.styled";
 import qrCodePng from "../../assets/qrcode-scan.png";
-import walletIcon from "../../assets/wallet icon.svg";
-import BrowserIcon from "../../assets/browser icon.svg";
-import settingsIcon from "../../assets/settings icon.svg";
 import Coins from "../Coins/Coins";
 import Nfts from "../Nfts/Nfts";
+import Footer from "../../containers/Footer/Footer";
 
 const Dashboard = () => {
   const [tabs, setTabs] = useState("Coins");
@@ -64,11 +60,7 @@ const Dashboard = () => {
           {tabs === "Coins" ? <Coins /> : tabs === "Nfts" ? <Nfts /> : null}
         </DashboardMainList>
       </DashboardMain>
-      <DashboardNav>
-        <DashboardNavIcon src={walletIcon}></DashboardNavIcon>
-        <DashboardNavIcon src={BrowserIcon}></DashboardNavIcon>
-        <DashboardNavIcon src={settingsIcon}></DashboardNavIcon>
-      </DashboardNav>
+      <Footer />
     </DashboardContainer>
   );
 };

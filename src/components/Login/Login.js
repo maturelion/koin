@@ -4,9 +4,10 @@ import {
   LoginPicture,
   LoginTextContainer,
   LoginTextHeader,
-  LoginText,
+  // LoginText,
   LoginButtonLayout,
   LoginButton,
+  LoginFormWrapper,
 } from "./Login.styled";
 import { Link } from "react-router-dom";
 import login from "../../assets/login.png";
@@ -16,25 +17,30 @@ const Login = () => {
     <LoginContainer>
       <LoginPicture src={login} />
       <LoginTextContainer>
-        <LoginTextHeader>Restore wallet</LoginTextHeader>
-        <LoginText>
+        <LoginTextHeader>Login to wallet</LoginTextHeader>
+        {/* <LoginText>
           Restore your wallet with the 12 word recovery phrase or with Google
           Drive
-        </LoginText>
-      </LoginTextContainer>
-      <LoginButtonLayout>
-        <LoginButton
+        </LoginText> */}
+        <form>
+          <LoginFormWrapper>
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Username" />
+          </LoginFormWrapper>
+          <LoginFormWrapper>
+            <label>Password</label>
+            <input type="password" name="password" placeholder="password" />
+          </LoginFormWrapper>
+          <LoginButton
           primary={"primary"}
           onClick={() => {
             console.log("Back up seedphrase");
           }}
         >
-          Restore from Google Drive
+          Login
         </LoginButton>
-        <LoginButton as={Link} to="/login-recovery-phrase">
-          Restore with rescovery phrase
-        </LoginButton>
-      </LoginButtonLayout>
+        </form>
+      </LoginTextContainer>
     </LoginContainer>
   );
 };

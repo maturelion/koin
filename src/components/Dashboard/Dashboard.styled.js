@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
-export const DashboardContainer = styled.div``;
+export const DashboardContainer = styled.div`
+  max-width: 425px;
+
+  @media only screen and (min-width: 769px) {
+    min-width: 769px;
+  }
+`;
 
 export const DashboardQR = styled.div`
   position: absolute;
@@ -101,6 +107,7 @@ export const DashboardMainCoins = styled.div`
   color: ${(props) => (props.activeTab === "Coins" ? "#1652f0" : "#757575")};
   text-align: center;
   width: 45%;
+  cursor: pointer;
   transition: 0.1s ease;
   &.animate {
     border-bottom: 3px solid #1652f0;
@@ -113,6 +120,7 @@ export const DashboardMainNFTs = styled.div`
   color: ${(props) => (props.activeTab === "Nfts" ? "#1652f0" : "#757575")};
   text-align: center;
   width: 45%;
+  cursor: pointer;
   transition: 0.1s ease;
   &.animate {
     border-bottom: 3px solid #1652f0;
@@ -130,17 +138,3 @@ export const DashboardMainList = styled.div`
     background: transparent; /* Optional: just make scrollbar invisible */
   }
 `;
-
-export const DashboardNav = styled.div`
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 60px;
-  width: 100vw;
-  background: #ffffff;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-`;
-
-export const DashboardNavIcon = styled.img``;

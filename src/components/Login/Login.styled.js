@@ -14,7 +14,7 @@ export const LoginTextContainer = styled.div`
   height: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
 `;
 
 export const LoginTextHeader = styled.div`
@@ -35,6 +35,11 @@ export const LoginText = styled.div`
 
   color: #4f5c6c;
 `;
+
+export const LoginFormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
 export const LoginButtonLayout = styled.div`
   display: flex;
