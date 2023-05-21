@@ -5,6 +5,8 @@ export const AppStyle = styled.div`
     display: block;
   }
   @media only screen and (min-width: 426px) {
-    display: none;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
   }
 `;

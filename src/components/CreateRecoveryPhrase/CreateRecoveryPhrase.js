@@ -1,7 +1,7 @@
 import React from "react";
 import {
   CreateRecoveryPhraseContainer,
-  CreateRecoveryPhraseHeaders,
+  // CreateRecoveryPhraseHeaders,
   CreateRecoveryPhraseCardContainer,
   CreateRecoveryPhraseCard,
   CreateRecoveryPhraseButtonLayout,
@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 const CreateRecoveryPhrase = () => {
   return (
     <CreateRecoveryPhraseContainer>
-      <CreateRecoveryPhraseHeaders>Recovery phrase</CreateRecoveryPhraseHeaders>
+      {/* <CreateRecoveryPhraseHeaders>Recovery phrase</CreateRecoveryPhraseHeaders> */}
       <CreateRecoveryPhraseCardContainer>
         <CreateRecoveryPhraseCard>
           <CreateRecoveryPhraseOl>

@@ -48,6 +48,7 @@ export const LegalLinkList = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-inline: 18px;
+  cursor: pointer;
 
   font-style: normal;
   font-weight: 400;

@@ -13,6 +13,7 @@ const AuthLayout = () => {
       {window.location.pathname === "/" ? null : (
         <BackArrow>
           <FontAwesomeIcon
+            style={{cursor: "pointer"}}
             icon={faArrowLeftLong}
             onClick={() => navigate(-1)}
           />

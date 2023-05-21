@@ -17,8 +17,8 @@ const Welcome = () => {
       <CarouselContainer>
         <Carousel>
           <div style={{ display: "flex" }}>
-            <WalletName>COIN</WalletName>
-            <WalletNameBlack>FACE</WalletNameBlack>
+            <WalletName>CRYPTO</WalletName>
+            <WalletNameBlack>LEDGER</WalletNameBlack>
           </div>
           <WalletDiscription>
             The easiest and most secure
@@ -32,7 +32,7 @@ const Welcome = () => {
           Create new wallet
         </Button>
         <Button as={Link} to="/login">
-          Import existing wallet
+          Login
         </Button>
       </AuthButtonLayout>
     </WelcomeContainer>
