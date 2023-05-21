@@ -36,14 +36,37 @@ export const LoginText = styled.div`
   color: #4f5c6c;
 `;
 
+export const LoginForm = styled.form`
+  margin-top: 30px;
+`
+
 export const LoginFormWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-block-end: 20px;
+
+  & > label{
+    margin-bottom: 10px;
+  }
 `
 
 export const LoginInput = styled.input`
   height: 40px;
   outline: none;
+  
+  
+  &:focus {
+    outline: 1px solid #0a49ee;
+  }
+`
+
+export const FormError = styled.div`
+    width: 100%;
+    text-align: center;
+    color: tomato;
+    font-size: small;
+    height: fit-content;
+    margin-top: 10px;
 `
 
 export const LoginButtonLayout = styled.div`
@@ -54,4 +77,6 @@ export const LoginButtonLayout = styled.div`
   height: 20vh;
 `;
 
-export const LoginButton = styled(Button)``;
+export const LoginButton = styled(Button)`
+  cursor: pointer;
+`;
