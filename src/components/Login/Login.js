@@ -5,11 +5,12 @@ import {
   LoginTextContainer,
   LoginTextHeader,
   // LoginText,
-  LoginButtonLayout,
+  // LoginButtonLayout,
   LoginButton,
   LoginFormWrapper,
+  LoginInput,
 } from "./Login.styled";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import login from "../../assets/login.png";
 
 const Login = () => {
@@ -25,11 +26,11 @@ const Login = () => {
         <form>
           <LoginFormWrapper>
             <label>Username</label>
-            <input type="text" name="username" placeholder="Username" />
+            <LoginInput type="text" name="username" placeholder="Username" />
           </LoginFormWrapper>
           <LoginFormWrapper>
             <label>Password</label>
-            <input type="password" name="password" placeholder="password" />
+            <LoginInput type="password" name="password" placeholder="password" />
           </LoginFormWrapper>
           <LoginButton
           primary={"primary"}

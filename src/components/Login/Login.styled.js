@@ -41,6 +41,11 @@ export const LoginFormWrapper = styled.div`
   flex-direction: column;
 `
 
+export const LoginInput = styled.input`
+  height: 40px;
+  outline: none;
+`
+
 export const LoginButtonLayout = styled.div`
   display: flex;
   flex-direction: column;
