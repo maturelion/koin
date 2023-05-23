@@ -44,7 +44,7 @@ const Dashboard = () => {
         <DashboardQRImg src={qrCodePng}></DashboardQRImg>
       </DashboardQR>
       <DashboardTop>
-        <DashboardUsername>@abigail</DashboardUsername>
+        <DashboardUsername>@{user.username}</DashboardUsername>
         <DashboardBalance>{overall_balance} USD</DashboardBalance>
         <DashboardTxTab>
           <DashboardTxTabLink href="/send">Send</DashboardTxTabLink>
