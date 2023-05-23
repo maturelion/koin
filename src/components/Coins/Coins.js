@@ -35,7 +35,7 @@ function Coins() {
       <StyleCoins>
         {balance && balance.map((e, i) => (
           <StyleCoin key={i}>
-            <StyleCoinIcon src={e.logo}></StyleCoinIcon>
+            <StyleCoinIcon src={e.currency_set.icon}></StyleCoinIcon>
             <StyleCoinDetails>
               <StyleCoinName>
                 <StyleCoinFullName>{e.currency_set.name}</StyleCoinFullName>
