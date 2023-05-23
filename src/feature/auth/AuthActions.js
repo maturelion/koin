@@ -7,7 +7,7 @@ const endPoint = process.env.REACT_APP_API_URL
 
 export const registerUser = createAsyncThunk(
   'auth/register',
-  async ({ username, email, password1, password2, referral }, thunkApi) => {
+  async ({ username, email, password1, password2 }, thunkApi) => {
     try {
       const config = {
         headers: {
@@ -16,7 +16,7 @@ export const registerUser = createAsyncThunk(
       }
       const res = await axios.post(
         `${endPoint}/rest-auth/registration/`,
-        { username, email, password1, password2, referral },
+        { username, email, password1, password2 },
         config
       )
       return res
@@ -48,7 +48,8 @@ export const loginUser = createAsyncThunk(
         { username, password },
         config
       )
-      localStorage.setItem("token", res.data.access_token)
+      console.log(res.data)
+      localStorage.setItem("token", res.data.access)
       localStorage.setItem("user", JSON.stringify(res.data.user))
       return res
     } catch (error) {

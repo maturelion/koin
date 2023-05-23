@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   CoinsBalanceText,
   StyleCoins,
@@ -10,48 +10,42 @@ import {
   StyleCoinAbrv,
   StyleCoinPrice,
   StyleCoinPriceUsd,
-  StyleCoinPriceValue,
+  // StyleCoinPriceValue,
 } from "./Coins.styled";
 // import btcPng from "../../assets/btc-png.png";
-import Moralis from "moralis";
-import { ethers } from "ethers";
+// import Moralis from "moralis";
+// import { ethers } from "ethers";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserWallet } from "../../feature/wallet/WalletActions";
 
 function Coins() {
-  const [tokenBalances, setTokenBalances] = useState([]);
-  const getBalance = async () => {
-    try {
-      const tkBalances = await Moralis.Web3API.account.getTokenBalances({
-        address: "0x4DE23f3f0Fb3318287378AdbdE030cf61714b2f3",
-        chain: "eth",
-      });
+  const dispatch = useDispatch()
 
-      setTokenBalances(tkBalances);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  const {balance} = useSelector(state => state.wallet)
+  const {user} = useSelector(state => state.user)
 
+  
   useEffect(() => {
-    getBalance();
-  });
+    dispatch(getUserWallet({user}))
+  }, [dispatch, user]);
 
   return (
     <>
       <CoinsBalanceText>BALANCE</CoinsBalanceText>
       <StyleCoins>
-        {tokenBalances.map((e, i) => (
+        {balance && balance.map((e, i) => (
           <StyleCoin key={i}>
             <StyleCoinIcon src={e.logo}></StyleCoinIcon>
             <StyleCoinDetails>
               <StyleCoinName>
-                <StyleCoinFullName>{e.name}</StyleCoinFullName>
-                <StyleCoinAbrv>{e.symbol}</StyleCoinAbrv>
+                <StyleCoinFullName>{e.currency_set.name}</StyleCoinFullName>
+                <StyleCoinAbrv>{e.currency_set.symbol}</StyleCoinAbrv>
               </StyleCoinName>
               <StyleCoinPrice>
-                <StyleCoinPriceUsd>$1,362.00</StyleCoinPriceUsd>
-                <StyleCoinPriceValue>
-                  {ethers.utils.FormatTypes(e.balance)}
-                </StyleCoinPriceValue>
+                <StyleCoinPriceUsd>${e.balance}</StyleCoinPriceUsd>
+                {/* <StyleCoinPriceValue>
+                  {"0"}
+                </StyleCoinPriceValue> */}
               </StyleCoinPrice>
             </StyleCoinDetails>
           </StyleCoin>

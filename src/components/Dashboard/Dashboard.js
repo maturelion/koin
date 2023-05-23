@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   DashboardContainer,
   DashboardQR,
@@ -18,9 +18,26 @@ import qrCodePng from "../../assets/qrcode-scan.png";
 import Coins from "../Coins/Coins";
 import Nfts from "../Nfts/Nfts";
 import Footer from "../../containers/Footer/Footer";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserWallet } from "../../feature/wallet/WalletActions";
 
 const Dashboard = () => {
+  const dispatch = useDispatch()
   const [tabs, setTabs] = useState("Coins");
+  const {balance} = useSelector(state => state.wallet)
+  const {user} = useSelector(state => state.user)
+
+  const sum = balance && balance.map((wallet) => wallet.balance).reduce((accumulator, balance) => parseFloat(accumulator) + parseFloat(balance), 0);
+
+  const overall_balance = new Intl.NumberFormat('en-US',
+  { style: 'currency', currency: 'USD' }
+).format(sum); 
+
+
+  useEffect(() => {
+  dispatch(getUserWallet({user}))
+  }, [dispatch, user])
+  
   return (
     <DashboardContainer>
       <DashboardQR>
@@ -28,7 +45,7 @@ const Dashboard = () => {
       </DashboardQR>
       <DashboardTop>
         <DashboardUsername>@abigail</DashboardUsername>
-        <DashboardBalance>US$0.00</DashboardBalance>
+        <DashboardBalance>{overall_balance} USD</DashboardBalance>
         <DashboardTxTab>
           <DashboardTxTabLink href="/send">Send</DashboardTxTabLink>
           <DashboardTxTabLink href="/receive">Receive</DashboardTxTabLink>
