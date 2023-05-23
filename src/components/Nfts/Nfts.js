@@ -11,7 +11,7 @@ import nftImage from "../../assets/nft-image.jpeg";
 export default function Nfts() {
   return (
     <NftsContainer>
-      {[...Array(1)].map((e, i) => (
+      {[...Array(0)].map((e, i) => (
         <NftsCard>
           <NftsImage src={nftImage}></NftsImage>
           <NftsName>Moralis Maharaja</NftsName>
