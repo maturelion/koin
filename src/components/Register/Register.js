@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   RegisterContainer,
   RegisterPicture,
@@ -19,10 +19,18 @@ import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../feature/auth/AuthActions";
+import ReactLoading from 'react-loading';
+import { clearMessage } from "../../feature/message/messageSlice";
+import { clearInputError } from "../../feature/inputError/inputErrorSlice";
 
 const Register = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
+  const { loading, success } = useSelector(
+    (state) => state.auth
+  )
+  const { message } = useSelector((state) => state.message);
   const { inputError } = useSelector((state) => state.inputError);
   const initialValues = {
     username: "",
@@ -30,6 +38,15 @@ const Register = () => {
     password1: "",
     password2: "",
   }
+
+  useEffect(() => {
+    dispatch(clearMessage());
+    dispatch(clearInputError());
+  }, [dispatch]);
+
+  useEffect(() => {
+    success && navigate("/login")  
+  }, [navigate, success])
 
   const onSubmit = (values) => {
     console.log(values)
@@ -46,17 +63,20 @@ const Register = () => {
       .required("Repeat Password is Required")
       .oneOf([Yup.ref("password1"), null], "Password Must Match"),
   })
+
   const formik = useFormik({
     initialValues,
     onSubmit,
     validationSchema,
   });
+
   return (
     <RegisterContainer>
       <RegisterPicture src={login} />
       <RegisterTextContainer>
         <RegisterTextHeader>Register</RegisterTextHeader>
         <RegisterForm onSubmit={formik.handleSubmit}>
+        {message && <FormError>{message}</FormError>}
           <RegisterFormWrapper>
             <label>Username</label>
             <RegisterInput 
@@ -129,12 +149,7 @@ const Register = () => {
             />
             {formik.errors.password2 ? <FormError>{formik.errors.password2}</FormError> : null}
           </RegisterFormWrapper>
-          <RegisterButton
-            type="submit"
-            primary={"primary"}
-          >
-            Register
-          </RegisterButton>
+          <RegisterButton type='submit' primary={"primary"} disabled={loading}>{loading ? <ReactLoading type={"spinningBubbles"} height={'20px'} width={'20px'} /> : "Register"}</RegisterButton>
         </RegisterForm>
       </RegisterTextContainer>
     </RegisterContainer>

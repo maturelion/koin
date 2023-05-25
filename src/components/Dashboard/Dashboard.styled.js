@@ -9,16 +9,20 @@ export const DashboardContainer = styled.div`
 `;
 
 export const DashboardQR = styled.div`
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  right: 24px;
-  top: 12px;
   background: #0a49ee;
   border-radius: 50%;
   height: 40px;
   width: 40px;
+  margin-left: auto;
+  margin-block-end: -40px;
+
+  @media only screen and (min-width: 769px) {
+    max-width: 769px;
+    /* right: 350px; */
+  }
 `;
 
 export const DashboardQRImg = styled.img`
