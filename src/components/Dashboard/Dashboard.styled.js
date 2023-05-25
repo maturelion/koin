@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const DashboardContainer = styled.div`
@@ -68,7 +69,7 @@ export const DashboardTxTab = styled.div`
   border-radius: 15px;
 `;
 
-export const DashboardTxTabLink = styled.a`
+export const DashboardTxTabLink = styled(Link)`
   font-style: normal;
   font-weight: 700;
   font-size: 14px;

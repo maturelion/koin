@@ -47,9 +47,9 @@ const Dashboard = () => {
         <DashboardUsername>@{user.username}</DashboardUsername>
         <DashboardBalance>{overall_balance} USD</DashboardBalance>
         <DashboardTxTab>
-          <DashboardTxTabLink href="/send">Send</DashboardTxTabLink>
-          <DashboardTxTabLink href="/receive">Receive</DashboardTxTabLink>
-          <DashboardTxTabLink href="/trade">Trade</DashboardTxTabLink>
+          <DashboardTxTabLink to="/#send">Send</DashboardTxTabLink>
+          <DashboardTxTabLink to="/#receive">Receive</DashboardTxTabLink>
+          <DashboardTxTabLink to="/#trade">Trade</DashboardTxTabLink>
         </DashboardTxTab>
       </DashboardTop>
       <DashboardMain>
