@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DashboardNav = styled.div`
-  position: absolute;
+  position: sticky;
   bottom: 0;
   display: flex;
   justify-content: space-evenly;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const DashboardContainer = styled.div`
   max-width: 425px;
+  max-height: 100vh;
 
   @media only screen and (min-width: 769px) {
     min-width: 769px;
