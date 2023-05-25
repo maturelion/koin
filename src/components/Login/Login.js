@@ -17,7 +17,7 @@ import login from "../../assets/login.png";
 import * as Yup from 'yup'
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../../feature/auth/AuthActions";
 import { clearMessage } from "../../feature/message/messageSlice";
 import { clearInputError } from "../../feature/inputError/inputErrorSlice";
@@ -87,6 +87,7 @@ const Login = () => {
           </LoginFormWrapper>
           
         <LoginButton type='submit' primary={"primary"} disabled={loading}>{loading ? <ReactLoading type={"spinningBubbles"} height={'20px'} width={'20px'} /> : "Login"}</LoginButton>
+        <LoginButton style={{color: "black"}}>Dont't have an account? <Link style={{textDecoration: "none", color: "blue", marginInlineStart: "5px"}} to="/register">Register</Link></LoginButton>
         </LoginForm>
       </LoginTextContainer>
     </LoginContainer>
