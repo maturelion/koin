@@ -150,7 +150,7 @@ const Register = () => {
             {formik.errors.password2 ? <FormError>{formik.errors.password2}</FormError> : null}
           </RegisterFormWrapper>
           <RegisterButton type='submit' primary={"primary"} disabled={loading}>{loading ? <ReactLoading type={"spinningBubbles"} height={'20px'} width={'20px'} /> : "Register"}</RegisterButton>
-          <RegisterButton style={{color: "black"}}>Already have an account? <Link style={{textDecoration: "none", color: "blue", marginInlineStart: "5px"}} to="/login">Login</Link></RegisterButton>
+          <RegisterButton type="button" style={{color: "black"}}>Already have an account? <Link style={{textDecoration: "none", color: "blue", marginInlineStart: "5px"}} to="/login">Login</Link></RegisterButton>
         </RegisterForm>
       </RegisterTextContainer>
     </RegisterContainer>

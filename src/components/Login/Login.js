@@ -87,7 +87,7 @@ const Login = () => {
           </LoginFormWrapper>
           
         <LoginButton type='submit' primary={"primary"} disabled={loading}>{loading ? <ReactLoading type={"spinningBubbles"} height={'20px'} width={'20px'} /> : "Login"}</LoginButton>
-        <LoginButton style={{color: "black"}}>Dont't have an account? <Link style={{textDecoration: "none", color: "blue", marginInlineStart: "5px"}} to="/register">Register</Link></LoginButton>
+        <LoginButton type="button" style={{color: "black"}}>Dont't have an account? <Link style={{textDecoration: "none", color: "blue", marginInlineStart: "5px"}} to="/register">Register</Link></LoginButton>
         </LoginForm>
       </LoginTextContainer>
     </LoginContainer>
