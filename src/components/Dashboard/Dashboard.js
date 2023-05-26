@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {
   DashboardContainer,
-  DashboardQR,
-  DashboardQRImg,
+  // DashboardQR,
+  // DashboardQRImg,
   DashboardTop,
   DashboardUsername,
   DashboardBalance,
@@ -14,7 +14,7 @@ import {
   DashboardMainCoins,
   DashboardMainNFTs,
 } from "./Dashboard.styled";
-import qrCodePng from "../../assets/qrcode-scan.png";
+// import qrCodePng from "../../assets/qrcode-scan.png";
 import Coins from "../Coins/Coins";
 import Nfts from "../Nfts/Nfts";
 import Footer from "../../containers/Footer/Footer";
@@ -40,15 +40,15 @@ const Dashboard = () => {
   
   return (
     <DashboardContainer>
-      <DashboardQR>
+      {/* <DashboardQR>
         <DashboardQRImg src={qrCodePng}></DashboardQRImg>
-      </DashboardQR>
+      </DashboardQR> */}
       <DashboardTop>
         <DashboardUsername>@{user.username}</DashboardUsername>
         <DashboardBalance>{overall_balance} USD</DashboardBalance>
         <DashboardTxTab>
           <DashboardTxTabLink to="/#send">Send</DashboardTxTabLink>
-          <DashboardTxTabLink to="/#receive">Receive</DashboardTxTabLink>
+          <DashboardTxTabLink to="receive">Receive</DashboardTxTabLink>
           <DashboardTxTabLink to="/#trade">Trade</DashboardTxTabLink>
         </DashboardTxTab>
       </DashboardTop>

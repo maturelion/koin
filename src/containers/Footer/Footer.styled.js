@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const DashboardNav = styled.div`
@@ -17,4 +18,10 @@ export const DashboardNav = styled.div`
   }
 `;
 
-export const DashboardNavIcon = styled.img``;
+export const DashboardNavIconLink = styled(Link)`
+  cursor: pointer;
+`;
+
+export const DashboardNavIcon = styled.img`
+  cursor: pointer;
+`;
