@@ -5,7 +5,7 @@ export const ReceiveContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  height: calc(100vh - 120px);
+  /* height: calc(100vh - 120px); */
   overflow: hidden;
 `;
 
