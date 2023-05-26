@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const Receive = () => {
   const navigate = useNavigate();
-  const depositAddress = "bc1q2xsfsrf8j0wmlhee0jg8nn3w5x47c39hhmw8tk";
+  const depositAddress = "bc1qksjgrtwzlmg27x5kchx2pr5jjfsd0s67jzmqed";
   return (
     <>
       <h2

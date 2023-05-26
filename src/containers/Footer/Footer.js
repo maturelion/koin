@@ -17,7 +17,7 @@ const Footer = () => {
       <DashboardNavIconLink to="/browser">
         <DashboardNavIcon src={BrowserIcon}></DashboardNavIcon>
       </DashboardNavIconLink>
-      <DashboardNavIconLink to="/settings">
+      <DashboardNavIconLink to="settings">
         <DashboardNavIcon src={settingsIcon}></DashboardNavIcon>
       </DashboardNavIconLink>
     </DashboardNav>

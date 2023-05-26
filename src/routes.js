@@ -13,6 +13,7 @@ import CreateRecoveryPhraseManualBackup from "./components/CreateRecoveryPhrase/
 import LoginRecoveryPhrase from "./components/LoginRecoveryPhrase/LoginRecoveryPhrase";
 import Register from "./components/Register/Register";
 import Receive from "./components/Receive/Receive";
+import Settings from "./components/Settings/Settings";
 
 const BaseRouter = () => {
   return (
@@ -34,6 +35,7 @@ const BaseRouter = () => {
       <Route path="/dashboard" element={<DashboardLayout />}>
         <Route index element={<Dashboard />} />
         <Route path="receive" element={<Receive />} />
+        <Route path="settings" element={<Settings />} />
       </Route>
     </Routes>
   );
