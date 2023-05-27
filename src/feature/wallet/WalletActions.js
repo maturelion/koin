@@ -17,7 +17,6 @@ export const getUserWallet = createAsyncThunk(
         `${endPoint}/currency-balances/?wallet=${user.id}`,
         config
       );
-      console.log(res.data)
       return res.data;
     } catch (error) {
       console.log(error);

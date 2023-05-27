@@ -49,7 +49,6 @@ const Register = () => {
   }, [navigate, success])
 
   const onSubmit = (values) => {
-    console.log(values)
     dispatch(registerUser(values)).unwrap().then(res => navigate("/login"))
   }
 
