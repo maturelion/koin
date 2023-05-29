@@ -14,6 +14,7 @@ import LoginRecoveryPhrase from "./components/LoginRecoveryPhrase/LoginRecoveryP
 import Register from "./components/Register/Register";
 import Receive from "./components/Receive/Receive";
 import Settings from "./components/Settings/Settings";
+import Send from "./components/Send/Send";
 
 const BaseRouter = () => {
   return (
@@ -35,6 +36,7 @@ const BaseRouter = () => {
       <Route path="/dashboard" element={<DashboardLayout />}>
         <Route index element={<Dashboard />} />
         <Route path="receive" element={<Receive />} />
+        <Route path="send" element={<Send />} />
         <Route path="settings" element={<Settings />} />
       </Route>
     </Routes>

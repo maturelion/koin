@@ -22,22 +22,29 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserWallet } from "../../feature/wallet/WalletActions";
 
 const Dashboard = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [tabs, setTabs] = useState("Coins");
-  const {balance} = useSelector(state => state.wallet)
-  const {user} = useSelector(state => state.user)
+  const { balance } = useSelector((state) => state.wallet);
+  const { user } = useSelector((state) => state.user);
 
-  const sum = balance && balance.map((wallet) => wallet.balance).reduce((accumulator, balance) => parseFloat(accumulator) + parseFloat(balance), 0);
+  const sum =
+    balance &&
+    balance
+      .map((wallet) => wallet.balance)
+      .reduce(
+        (accumulator, balance) => parseFloat(accumulator) + parseFloat(balance),
+        0
+      );
 
-  const overall_balance = new Intl.NumberFormat('en-US',
-  { style: 'currency', currency: 'USD' }
-).format(sum); 
-
+  const overall_balance = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(sum);
 
   useEffect(() => {
-  dispatch(getUserWallet({user}))
-  }, [dispatch, user])
-  
+    Object.keys(user).length && dispatch(getUserWallet({ user }));
+  }, [dispatch, user]);
+
   return (
     <DashboardContainer>
       {/* <DashboardQR>
@@ -47,7 +54,7 @@ const Dashboard = () => {
         <DashboardUsername>@{user.username}</DashboardUsername>
         <DashboardBalance>{overall_balance} USD</DashboardBalance>
         <DashboardTxTab>
-          <DashboardTxTabLink to="/#send">Send</DashboardTxTabLink>
+          <DashboardTxTabLink to="send">Send</DashboardTxTabLink>
           <DashboardTxTabLink to="receive">Receive</DashboardTxTabLink>
           <DashboardTxTabLink to="/#trade">Trade</DashboardTxTabLink>
         </DashboardTxTab>
