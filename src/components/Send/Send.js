@@ -21,11 +21,11 @@ const Send = () => {
   const onSubmit = (values) => {
     // dispatch(loginUser(values)).unwrap().then(res => navigate("/dashboard"))
     setLoading(true);
-    setTimeout(() => {
-      // Assume an error occurred during the API request
-      alert("An error occur, please contact admin.");
-      setLoading(false);
-    }, 2000); // Delay of 2 seconds
+    // setTimeout(() => {
+    //   // Assume an error occurred during the API request
+    //   alert("An error occur, please contact admin.");
+    //   setLoading(false);
+    // }, 2000); // Delay of 2 seconds
   };
 
   const validationSchema = Yup.object({
