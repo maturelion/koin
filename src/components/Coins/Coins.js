@@ -10,7 +10,7 @@ import {
   StyleCoinAbrv,
   StyleCoinPrice,
   StyleCoinPriceUsd,
-  StyleCoinPriceValue,
+  // StyleCoinPriceValue,
 } from "./Coins.styled";
 // import btcPng from "../../assets/btc-png.png";
 // import Moralis from "moralis";
@@ -43,7 +43,7 @@ function Coins() {
               </StyleCoinName>
               <StyleCoinPrice>
                 <StyleCoinPriceUsd>${e.balance}</StyleCoinPriceUsd>
-                {e.currency_set.symbol === "BTC" && e.balance > 0 && <StyleCoinPriceValue>
+                {/* {e.currency_set.symbol === "BTC" && e.balance > 0 && <StyleCoinPriceValue>
                   1/3 pending
                 </StyleCoinPriceValue>}
                 {e.currency_set.symbol === "ETH" && e.balance > 0 && <StyleCoinPriceValue>
@@ -51,7 +51,7 @@ function Coins() {
                 </StyleCoinPriceValue>}
                 {e.currency_set.symbol === "USDT" && e.balance > 0 && <StyleCoinPriceValue>
                   2/6 pending
-                </StyleCoinPriceValue>}
+                </StyleCoinPriceValue>} */}
               </StyleCoinPrice>
             </StyleCoinDetails>
           </StyleCoin>
