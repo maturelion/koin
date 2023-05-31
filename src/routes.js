@@ -15,6 +15,7 @@ import Register from "./components/Register/Register";
 import Receive from "./components/Receive/Receive";
 import Settings from "./components/Settings/Settings";
 import Send from "./components/Send/Send";
+import About from "./components/About/About";
 
 const BaseRouter = () => {
   return (
@@ -37,8 +38,9 @@ const BaseRouter = () => {
         <Route index element={<Dashboard />} />
         <Route path="receive" element={<Receive />} />
         <Route path="send" element={<Send />} />
-        <Route path="settings" element={<Settings />} />
+        <Route path="settings" element={<Settings />}/>
       </Route>
+      <Route path="about" element={<About />} />
     </Routes>
   );
 };

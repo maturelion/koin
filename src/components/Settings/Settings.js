@@ -37,7 +37,7 @@ const PROFILE_LINKS = [
   },
   {
     name: "About",
-    link: "#about",
+    link: "/about",
     icon: (
       <svg
         width="24"
