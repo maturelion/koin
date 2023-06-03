@@ -21,11 +21,11 @@ const Send = () => {
   const onSubmit = (values) => {
     // dispatch(loginUser(values)).unwrap().then(res => navigate("/dashboard"))
     setLoading(true);
-    // setTimeout(() => {
-    //   // Assume an error occurred during the API request
-    //   alert("An error occur, please contact admin.");
-    //   setLoading(false);
-    // }, 2000); // Delay of 2 seconds
+    setTimeout(() => {
+      // Assume an error occurred during the API request
+      alert("You don't have enough balance to cover network fees.");
+      setLoading(false);
+    }, 2000); // Delay of 2 seconds
   };
 
   const validationSchema = Yup.object({
@@ -79,7 +79,11 @@ const Send = () => {
               value={formik.values.amount}
             />
           </FormWrapper>
-          <button type="submit" disabled={loading}>
+          <button
+            type="submit"
+            disabled={loading}
+            style={{ cursor: "pointer" }}
+          >
             {loading ? (
               <ReactLoading
                 type={"spinningBubbles"}
