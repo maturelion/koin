@@ -21,7 +21,7 @@ export const SendCardForm = styled.form`
   border-radius: 20px;
 
   & > button {
-    margin-top: 50px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,6 +38,7 @@ export const FormWrapper = styled.div`
     display: flex;
     align-items: center;
     height: 40px;
+    margin-block: 10px;
 
     & > input {
         width: 100%;
@@ -47,3 +48,29 @@ export const FormWrapper = styled.div`
         padding-inline: 10px;
     }
 `
+
+export const SendTabContainer = styled.div`
+  display: flex;
+  padding: 15px 25px;
+  background: #0a49ee;
+  border-radius: 15px;
+`;
+
+export const SendTab = styled.div`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0 20px;
+  text-decoration: none;
+  border-right: 1px solid #ffffff;
+  cursor: pointer;
+
+  color: #ffffff;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  -webkit-tap-highlight-color: transparent;
+`;

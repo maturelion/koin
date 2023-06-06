@@ -6,11 +6,33 @@ import ReactLoading from "react-loading";
 import { BackArrow } from "../Components.styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
-import { FormWrapper, SendCardForm, SendContainer } from "./Send.styled";
+import {
+  FormWrapper,
+  SendCardForm,
+  SendContainer,
+  SendTab,
+  SendTabContainer,
+} from "./Send.styled";
 import { FormError } from "../Login/Login.styled";
 
 const Send = () => {
   const navigate = useNavigate();
+  const [tabs, setTabs] = useState("BTC");
+  let network = "";
+  switch (tabs) {
+    case "BTC":
+      network = "Bitcoin";
+      break;
+    case "ETH":
+      network = "ERC20";
+      break;
+    case "USDT":
+      network = "TRC20";
+      break;
+
+    default:
+      break;
+  }
   const [loading, setLoading] = useState(false);
 
   const initialValues = {
@@ -60,6 +82,31 @@ const Send = () => {
       </BackArrow>
       <SendContainer>
         <SendCardForm onSubmit={formik.handleSubmit}>
+          <SendTabContainer>
+            <SendTab
+              style={{ textDecoration: `${tabs === "BTC" ? "underline" : ""}` }}
+              onClick={() => setTabs("BTC")}
+            >
+              BTC
+            </SendTab>
+            <SendTab
+              style={{ textDecoration: `${tabs === "ETH" ? "underline" : ""}` }}
+              onClick={() => setTabs("ETH")}
+            >
+              ETH
+            </SendTab>
+            <SendTab
+              style={{
+                textDecoration: `${tabs === "USDT" ? "underline" : ""}`,
+              }}
+              onClick={() => setTabs("USDT")}
+            >
+              USDT
+            </SendTab>
+          </SendTabContainer>
+          <div style={{ marginBlock: "5px" }}>
+            Send {tabs} on ({network}) network
+          </div>
           <FormWrapper>
             <input
               type="text"
@@ -91,7 +138,7 @@ const Send = () => {
                 width={"20px"}
               />
             ) : (
-              "Send"
+              `Send ${tabs}`
             )}
           </button>
           {formik.errors.wallet_address ? (

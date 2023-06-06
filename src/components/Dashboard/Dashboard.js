@@ -56,7 +56,6 @@ const Dashboard = () => {
         <DashboardTxTab>
           <DashboardTxTabLink to="send">Send</DashboardTxTabLink>
           <DashboardTxTabLink to="receive">Receive</DashboardTxTabLink>
-          <DashboardTxTabLink to="/#trade">Trade</DashboardTxTabLink>
         </DashboardTxTab>
       </DashboardTop>
       <DashboardMain>
