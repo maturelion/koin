@@ -10,8 +10,8 @@ import { useDispatch } from "react-redux";
 
 const PROFILE_LINKS = [
   {
-    name: "Account Settings",
-    link: "/account-settings",
+    name: "Change Password",
+    link: "/dashboard/change-password",
     icon: (
       <svg
         width="24"
@@ -89,7 +89,7 @@ const PROFILE_LINKS = [
   },
   {
     name: "FAQ",
-    link: "#faq",
+    link: "/dashboard/faqs",
     icon: (
       <svg
         width="24"

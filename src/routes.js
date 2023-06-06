@@ -16,6 +16,8 @@ import Receive from "./components/Receive/Receive";
 import Settings from "./components/Settings/Settings";
 import Send from "./components/Send/Send";
 import About from "./components/About/About";
+import ChangePassword from "./components/ChangePassword/ChangePassword";
+import Faq from "./components/Faq/Faq";
 
 const BaseRouter = () => {
   return (
@@ -38,7 +40,9 @@ const BaseRouter = () => {
         <Route index element={<Dashboard />} />
         <Route path="receive" element={<Receive />} />
         <Route path="send" element={<Send />} />
-        <Route path="settings" element={<Settings />}/>
+        <Route path="settings" element={<Settings />} />
+        <Route path="change-password" element={<ChangePassword />} />
+        <Route path="faqs" element={<Faq />} />
       </Route>
       <Route path="about" element={<About />} />
     </Routes>
