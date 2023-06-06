@@ -32,6 +32,7 @@ function Coins() {
   return (
     <>
       <CoinsBalanceText>BALANCE</CoinsBalanceText>
+      {/* No Cryptocurrency in Wallet */}
       <StyleCoins>
         {balance && balance.map((e, i) => (
           <StyleCoin key={i}>
