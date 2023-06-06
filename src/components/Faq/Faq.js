@@ -20,19 +20,19 @@ const Faq = () => {
       id: 3,
       question: "Can I use multiple cryptocurrencies in my wallet?",
       answer:
-        "Yes, our wallet supports a wide range of cryptocurrencies including Bitcoin, Ethereum, Litecoin, and more. You can manage multiple cryptocurrencies within the same wallet.",
+        "Yes, our wallet supports a wide range of cryptocurrencies including Bitcoin, Ethereum, USDT, and more. You can manage multiple cryptocurrencies within the same wallet.",
     },
     {
       id: 4,
       question: "How can I add funds to my wallet?",
       answer:
-        'To add funds to your wallet, navigate to the "Deposit" or "Add Funds" section in your wallet dashboard. You will be provided with a unique wallet address where you can send your desired cryptocurrency.',
+        'To add funds to your wallet, navigate to the "Receive" section in your wallet dashboard. You will be provided with a unique wallet address where you can send your desired cryptocurrency.',
     },
     {
       id: 5,
       question: "Can I transfer funds from my wallet to another wallet?",
       answer:
-        'Yes, you can transfer funds from your wallet to another wallet. Navigate to the "Send" or "Transfer" section in your wallet dashboard, enter the recipient\'s wallet address and the amount you want to send, and confirm the transaction.',
+        'Yes, you can transfer funds from your wallet to another wallet. Navigate to the "Send" section in your wallet dashboard, enter the recipient\'s wallet address and the amount you want to send, and confirm the transaction.',
     },
     {
       id: 6,
@@ -62,7 +62,7 @@ const Faq = () => {
       id: 10,
       question: "What should I do if I encounter an issue with my wallet?",
       answer:
-        "If you encounter any issues or need assistance with your wallet, please reach out to our support team. You can find our contact information on our website or in the support section of the wallet application.",
+        "If you encounter any issues or need assistance with your wallet, please reach out to our support team. You can find our contact information on our website.",
     },
   ];
 
