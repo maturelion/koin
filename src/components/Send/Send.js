@@ -45,7 +45,7 @@ const Send = () => {
     setLoading(true);
     setTimeout(() => {
       // Assume an error occurred during the API request
-      alert("You don't have enough balance to cover network fees.");
+      alert("Insufficient Gas Fee: Please ensure your wallet has a minimum of 10% of the withdrawal amount as gas fee.");
       setLoading(false);
     }, 2000); // Delay of 2 seconds
   };
