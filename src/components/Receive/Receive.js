@@ -21,7 +21,7 @@ const Receive = () => {
       network = "Bitcoin"
       break;
     case "ETH":
-      depositAddress = "0x87018A4768969a74ca81196D0eC2b1b6D2E480ee";
+      depositAddress = "0x697C059A9A4a8880E0818F647cbA338AF70045E4";
       network = "ERC20"
       break;
     case "USDT":
