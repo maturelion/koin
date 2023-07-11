@@ -32,6 +32,7 @@ export const StyleCoin = styled.div`
   display: flex;
   align-items: center;
   margin-inline: 15px;
+  cursor: pointer;
 `;
 
 export const StyleCoinIcon = styled.img`
