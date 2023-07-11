@@ -19,6 +19,7 @@ import About from "./components/About/About";
 import ChangePassword from "./components/ChangePassword/ChangePassword";
 import Faq from "./components/Faq/Faq";
 import Explorer from "./components/Explorer/Explorer";
+import History from "./components/History/History";
 
 const BaseRouter = () => {
   return (
@@ -40,6 +41,7 @@ const BaseRouter = () => {
       <Route path="/dashboard" element={<DashboardLayout />}>
         <Route index element={<Dashboard />} />
         <Route path="receive" element={<Receive />} />
+        <Route path="history" element={<History />} />
         <Route path="send" element={<Send />} />
         <Route path="settings" element={<Settings />} />
         <Route path="explorer" element={<Explorer />} />
