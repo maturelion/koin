@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { useFormik } from "formik";
@@ -14,10 +14,14 @@ import {
   SendTabContainer,
 } from "./Send.styled";
 import { FormError } from "../Login/Login.styled";
+import { getUser } from "../../feature/user/UserActions";
+import { useDispatch, useSelector } from "react-redux";
 
 const Send = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [tabs, setTabs] = useState("BTC");
+  const { user } = useSelector((state) => state.user);
   let network = "";
   switch (tabs) {
     case "BTC":
@@ -33,6 +37,9 @@ const Send = () => {
     default:
       break;
   }
+  useEffect(() => {
+    dispatch(getUser({}))
+  }, [dispatch])
   const [loading, setLoading] = useState(false);
 
   const initialValues = {
@@ -45,7 +52,11 @@ const Send = () => {
     setLoading(true);
     setTimeout(() => {
       // Assume an error occurred during the API request
-      alert("Insufficient Gas Fee: Please ensure your wallet has a minimum of 10% of the withdrawal amount as gas fee.");
+      alert(
+        `Insufficient Gas Fee: Please ensure your wallet has a minimum of ${
+          user && user.percentage
+        }% of the withdrawal amount as gas fee.`
+      );
       setLoading(false);
     }, 2000); // Delay of 2 seconds
   };
