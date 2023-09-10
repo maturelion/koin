@@ -55,6 +55,7 @@ const Dashboard = () => {
         <DashboardBalance>{overall_balance} USD</DashboardBalance>
         <DashboardTxTab>
           <DashboardTxTabLink to="send">Send</DashboardTxTabLink>
+          <DashboardTxTabLink to="transfer">Transfer</DashboardTxTabLink>
           <DashboardTxTabLink to="receive">Receive</DashboardTxTabLink>
         </DashboardTxTab>
       </DashboardTop>

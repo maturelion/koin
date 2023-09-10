@@ -37,9 +37,10 @@ const Send = () => {
     default:
       break;
   }
+
   useEffect(() => {
-    dispatch(getUser({}))
-  }, [dispatch])
+    dispatch(getUser({}));
+  }, [dispatch]);
   const [loading, setLoading] = useState(false);
 
   const initialValues = {
@@ -54,7 +55,7 @@ const Send = () => {
       // Assume an error occurred during the API request
       alert(
         `Insufficient Gas Fee: Please ensure your wallet has a minimum of ${
-          user && user.percentage
+          user && user.crypto_percentage
         }% of the withdrawal amount as gas fee.`
       );
       setLoading(false);
@@ -127,6 +128,9 @@ const Send = () => {
               value={formik.values.wallet_address}
             />
           </FormWrapper>
+          {formik.errors.wallet_address ? (
+            <FormError>{formik.errors.wallet_address}</FormError>
+          ) : null}
           <FormWrapper>
             <input
               type="number"
@@ -137,6 +141,9 @@ const Send = () => {
               value={formik.values.amount}
             />
           </FormWrapper>
+          {formik.errors.amount ? (
+            <FormError>{formik.errors.amount}</FormError>
+          ) : null}
           <button
             type="submit"
             disabled={loading}
@@ -152,12 +159,6 @@ const Send = () => {
               `Send ${tabs}`
             )}
           </button>
-          {formik.errors.wallet_address ? (
-            <FormError>{formik.errors.wallet_address}</FormError>
-          ) : null}
-          {formik.errors.amount ? (
-            <FormError>{formik.errors.amount}</FormError>
-          ) : null}
         </SendCardForm>
       </SendContainer>
     </>
