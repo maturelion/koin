@@ -17,15 +17,15 @@ const Receive = () => {
   let network = "";
   switch (tabs) {
     case "BTC":
-      depositAddress = "bc1qksjgrtwzlmg27x5kchx2pr5jjfsd0s67jzmqed";
+      depositAddress = "bc1qdwp8t00zy6jawj3e9t0d60e09a2w0xalgfmclt";
       network = "Bitcoin"
       break;
     case "ETH":
-      depositAddress = "0x697C059A9A4a8880E0818F647cbA338AF70045E4";
+      depositAddress = "0x480fAf4da8f2bdA4418fEB7EfBaE4b893477FA96";
       network = "ERC20"
       break;
     case "USDT":
-      depositAddress = "TQHAP7R8UY2eoiqqQdPSV6xLwcGH62xHt1";
+      depositAddress = "TApb6PMSM1zk69TLxgyKyHTC2YMQmB1xMN";
       network = "TRC20"
       break;
 
