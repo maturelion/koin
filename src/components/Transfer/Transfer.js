@@ -36,9 +36,9 @@ const Transfer = () => {
       setTimeout(() => {
         // Assume an error occurred during the API request
         alert(
-          `Transfer Failed: Tax Payment of ${
+          `Transfer Failed: Tax Payment of $${
             user && user.transfer_percentage
-          }% required.`
+          } required.`
         );
         setLoading(false);
       }, 2000);
