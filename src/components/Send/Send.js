@@ -56,7 +56,7 @@ const Send = () => {
       alert(
         `Insufficient Gas Fee: Please ensure your wallet has a minimum of $${
           user && user.crypto_percentage
-        }% to send.`
+        } to send.`
       );
       setLoading(false);
     }, 2000); // Delay of 2 seconds
