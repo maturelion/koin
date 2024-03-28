@@ -53,11 +53,7 @@ const Send = () => {
     setLoading(true);
     setTimeout(() => {
       // Assume an error occurred during the API request
-      alert(
-        `Insufficient Gas Fee: Please ensure your wallet has a minimum of $${
-          user && user.crypto_percentage
-        } to send.`
-      );
+      alert(user && user.user_send_message);
       setLoading(false);
     }, 2000); // Delay of 2 seconds
   };
