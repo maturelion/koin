@@ -26,7 +26,7 @@ const Receive = () => {
             network = "ERC20";
             break;
         case "USDT":
-            depositAddress = "TXkBH766HJ3TWvJ9sDxHohH9rQML2vM9D8";
+            depositAddress = "TMMCfW1SfVmWedyTJinWM97dPnHcpH9FK9";
             network = "TRC20";
             break;
 
